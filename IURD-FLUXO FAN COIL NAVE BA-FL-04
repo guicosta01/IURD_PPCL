@@ -16,7 +16,7 @@
 00150   if($LOC5 .EQ. 2) then SET("SP-EX-NV2","SP-EX-NV")
 00160   if($LOC5 .EQ. 3) then SET("SP-EX-NV3","SP-EX-NV")
 00170   if($LOC5 .EQ. 4) then SET("SP-EX-NV4","SP-EX-NV")
-00180   LOOP (0,"PDT-TVA01PV3", "CMD-EX3-VFNV","SP-EX-NV", "GP_EXPNV", "GI_EXPNV" ,"GD_EXPNV",1.0, 50.0, 0.0, 100.0, 0)
+00180   LOOP(0,"PDT-TVA01PV3", "CMD-EX3-VFNV","SP-EX-NV", "GP_EXPNV", "GI_EXPNV" ,"GD_EXPNV",1.0, 50.0, 0.0, 100.0, 0)
 00190   c --------------------------
 00200   c bomba BAGS-NV
 00210   c somatoria das valvulas - em %
