@@ -1,10 +1,10 @@
 00010   c __________________________   
 00020   c acionamento de bomba e exaustor 
 00030   c __________________________
-00040   if("AM_VE2PBNV_QEVAC_2PB_NV" .EQ. ON) then goto 50 else goto 240
+00040   if("AM_VE2PBNV_QEVAC_2PB_NV" .EQ. ON) then goto 50 else goto 340
 00050   if("CMD_A2P03PV2_QAP2PB04NV" .EQ. ON .OR. "CMD_A2P06PV2_QAP2PB04NV" .EQ. ON .OR. "CMD_A2P09PV2_QAP2PB04NV" .EQ. ON) then ON("CMD_VE2PBNV_QEVAC_2PB_NV") else OFF("CMD_VE2PBNV_QEVAC_2PB_NV")
 00060   if("CMD_VE2PBNV_QEVAC_2PB_NV" .EQ. on .and. "ST_VE2PBNVVF_QEVAC_2PB_NV" .EQ. OFF) then ON("ALM_VE2PBNV_VF") else OFF("ALM_VE2PBNV_VF")
-00061   if("ALM_VE2PBNV_VF" .EQ. ON) then goto 240
+00061   if("ALM_VE2PBNV_VF" .EQ. ON) then goto 340
 00070   c __________________________
 00080   c setpoint dinamico exaustor _ em func dos TAE 
 00090   if("CMD_A2P03PV2_QAP2PB04NV" .EQ. ON) then $LOC1=1 else $LOC1=0
@@ -22,23 +22,12 @@
 00230   if($LOC6 .GT. 5) then ON("CMD_2SA1CAGC_BAGSNV") else OFF("CMD_2SA1CAGC_BAGSNV")
 00240   c __________________________
 00250   c acionamento exaustor expurgo ex2-pbnv
-00260
-00270
-00280
-00290
-00300
-00310
-00320
-00330
-00340
-00350
-00360
-00370
-00380
-00390
-00400
-00410
-00420
-00430
-00440
-00450   goto 10
+00260   if("AM_EX2PBNV_QEVAC_2PB_NV" .EQ. ON) then goto 270 else goto 340
+00270   if("CMD_A2P03PV2_QAP2PB04NV" .EQ. ON .OR. "CMD_A2P06PV2_QAP2PB04NV" .EQ. ON .OR. "CMD_A2P09PV2_QAP2PB04NV" .EQ. ON) then ON("CMD_EX2PBNV_QEVAC_2PB_NV") else OFF("CMD_EX2PBNV_QEVAC_2PB_NV")
+00280   if("CMD_EX2PBNV_QEVAC_2PB_NV" .EQ. on .and. "ST_EX2PBNVVF_QEVAC_2PB_NV" .EQ. OFF) then ON("ALM_EX2PBNV_VF") else OFF("ALM_EX2PBNV_VF")
+00290   if("ALM_VE2PBNV_VF" .EQ. ON) then goto 340
+00300   if($LOC5 .EQ. 1) then SET("SP_Pr_EX2PB1","SP_Pr_EX2PBNV")
+00310   if($LOC5 .EQ. 2) then SET("SP_Pr_EX2PB2","SP_Pr_EX2PBNV")
+00320   if($LOC5 .EQ. 3) then SET("SP_Pr_EX2PB3","SP_Pr_EX2PBNV")
+00330   LOOP(0,"FT_TVA02PV2", "CMD_EX2PBNV_VF","SP_Pr_EX2PBNV", "GP_Pr_EX2PB", "GI_Pr_EX2PB" ,"GD_Pr_EX2PB",1.0, 50.0, 0.0, 100.0, 0)
+00340   goto 10
