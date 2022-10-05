@@ -39,6 +39,7 @@ FAN COILS NAVE A {
     SP_Pr_EX3_NVA4
     SP_Pr_EX3NVA (total)
     SP_EX05_NV
+    SP_CO2_REN_NVA
 
     FLAGS:
     PH_FC1_NV_A
@@ -93,7 +94,89 @@ FAN COILS NAVE A {
     GP_EXP05NV
     GI_EXP05NV
     GD_EXP05NV
-
-  
 }
 
+FAN COILS NAVE B{
+
+    GERAL:
+    CF5
+    RE_CO2_5
+    T_SEG5
+    CF6
+    RE_CO2_6
+    T_SEG6
+    CF6
+    RE_CO2_6
+    T_SEG6
+  
+
+    ALARMES:
+    ALM_FA_2PB_NAVEB
+    ALM_SDAI_2PB_NVB
+    ALM_TeRet_FC5_NV_B
+    ALM_TeRet_FC6_NV_B
+    ALM_TeRet_FC7_NV_B
+    ALM_TeRet_FC8_NV_B
+    ALM_TeIns_FC5_NV_B
+    ALM_TeIns_FC6_NV_B
+    ALM_TeIns_FC7_NV_B
+    ALM_TeIns_FC8_NV_B
+
+
+    SETPOINTS:
+    SP_ALM_TeRet_FCNV_B
+    SP_ALM_TeIns_FCNV_B
+    SP_PrIns_FC5NV
+    SP_PrIns_FC6NV
+    SP_PrIns_FC7NV
+    SP_PrIns_FC8NV
+    SP_CO2_REN_NVB
+    SP_TeRet_SEG_FCNVB
+
+
+    FLAGS:
+    PH_FC5_NV_B
+    PH_FC6_NV_B
+    PH_FC7_NV_B
+    PH_FC8_NV_B
+
+    PARAMETROS PID:
+    GP_Pr_FC5NV 
+    GI_Pr_FC5NV
+    GD_Pr_FC5NV
+    GP_Pr_FC6NV 
+    GI_Pr_FC6NV
+    GD_Pr_FC6NV
+    GP_Pr_FC7NV 
+    GI_Pr_FC7NV
+    GD_Pr_FC7NV
+    GP_Pr_FC8NV 
+    GI_Pr_FC8NV
+    GD_Pr_FC8NV
+
+    GP_V2V_FC5NV
+    GI_V2V_FC5NV
+    GD_V2V_FC5NV
+
+    GP_V2V_FC6NV
+    GI_V2V_FC6NV
+    GD_V2V_FC6NV
+
+    GP_V2V_FC7NV
+    GI_V2V_FC7NV
+    GD_V2V_FC7NV
+
+    GP_V2V_FC8NV
+    GI_V2V_FC8NV
+    GD_V2V_FC8NV
+   
+
+}
+
+DEFAULT THEME{
+    GERAL:
+    ALARMES:
+    SETPOINTS:
+    FLAGS:
+    PARAMETROS PID:
+}
