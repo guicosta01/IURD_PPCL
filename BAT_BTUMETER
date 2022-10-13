@@ -1,0 +1,12 @@
+00009	c ----------------------------------
+00010	c BTMMETER VIRTUAL BATISTERIO
+00020	c Q=m*c*dT
+00030	c "QAP1SB5_T_04" - saida
+00040	c "QAP1SB5_T_03" - entrada
+00041	c "V" = vazao nominal da bomba --> m
+00050	c ----------------------------------
+00051	"C_BTUMETER_BAT" = 1
+00052	"dT_BAT" = "QAP1SB5_T_04" - "QAP1SB5_T_03"
+00060	"Q_BAT" = m*c*dT
+00061	c obs: tudo em [KW]
+00070	goto 09
